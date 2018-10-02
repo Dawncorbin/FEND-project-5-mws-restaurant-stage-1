@@ -63,7 +63,7 @@ nav {
 }
 nav h1 {
   margin: auto;
-	padding: 25px 25px;
+	padding: 10px 20px;
 }
 nav h1 a {
   color: #fff;
@@ -145,8 +145,9 @@ nav h1 a {
   padding: 30px 15px 60px;
   text-align: center;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -154,10 +155,25 @@ nav h1 a {
   font-family: Arial,sans-serif;
   margin: 15px;
   min-height: 380px;
-  padding: 0 30px 25px;
+  padding: 0 0 25px;
   text-align: left;
-	max-width: 470px;
-  width: 80%;
+	min-width: 270px;
+	max-width: 400px;
+}
+@media only screen and (min-width: 0px) {
+		#restaurants-list li {
+			max-width: 100%;
+		}
+}
+@media only screen and (min-width: 714px) {
+		#restaurants-list li {
+			max-width: 45%;
+		}
+}
+@media only screen and (min-width: 1031px) {
+		#restaurants-list li {
+			max-width: 304px;
+		}
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
