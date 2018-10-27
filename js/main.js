@@ -1,13 +1,16 @@
 // Register Service Worker
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then(reg => console.log('Service Worker: Registered'))
-        .catch(err => console.log(`Service Worker: Error: ${err}`));
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('serviceWorker registraion successful with scope: ', registration);
+    }, function(err) {
+      // Registration failed
+      console.log('serviceWorker registration failed: ', err);
+    });
   });
+};
 
-}
 
 let restaurants,
   neighborhoods,
