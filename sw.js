@@ -29,14 +29,14 @@ self.addEventListener('install', function(e) {
       })
     );
   });
-// Install Fetch event
+// Call Fetch event
 self.addEventListener('fetch', function(e) {
     e.respondWith(
-      caches.match(event.request).then(function(resp) {
-        return resp || fetch(event.request).then(function(response) {
+      caches.match(e.request).then(function(resp) {
+        return resp || fetch(e.request).then(function(response) {
           let responseClone = response.clone();
           caches.open('cacheFiles').then(function(cache) {
-            cache.put(event.request, responseClone);
+            cache.put(e.request, responseClone);
           });
           return response;
         });
